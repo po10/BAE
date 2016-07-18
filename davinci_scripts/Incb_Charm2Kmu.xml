@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!-- Edited By PoolXMLCatalog.py -->
+<!DOCTYPE POOLFILECATALOG SYSTEM "InMemory">
+<POOLFILECATALOG>
+
+<File ID="30190085-6E21-E611-BAE4-001E67397751">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000019_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://f01-080-125-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000019_1.b2kmu.trigstrip.dst" se="GRIDKA_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://heplnx230.pp.rl.ac.uk:1094/pnfs/pp.rl.ac.uk/data/lhcb/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000019_1.b2kmu.trigstrip.dst" se="RAL-HEP_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000019_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="9AF50FBE-AA1E-E611-BE39-047D7BD6DDAE">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000014_1.b2kmu.trigstrip.dst" se="CNAF_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000014_1.b2kmu.trigstrip.dst?svcClass=lhcbDst" se="RAL_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://grid05.lal.in2p3.fr:1094//dpm/lal.in2p3.fr/home/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000014_1.b2kmu.trigstrip.dst" se="LAL_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000014_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="54D84D97-AB1E-E611-805A-FA163E1FF908">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000012_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000012_1.b2kmu.trigstrip.dst" se="CNAF_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://ccdcacli067.in2p3.fr:1094/pnfs/in2p3.fr/data/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000012_1.b2kmu.trigstrip.dst" se="IN2P3_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000012_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="766F0A06-5B17-E611-B6B7-008CFAFBEFE8">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000001_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000001_1.b2kmu.trigstrip.dst" se="CNAF_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://ccdcacli067.in2p3.fr:1094/pnfs/in2p3.fr/data/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000001_1.b2kmu.trigstrip.dst" se="IN2P3_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000001_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="425F4556-EC1B-E611-8D33-1CC1DE1CE026">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000008_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000008_1.b2kmu.trigstrip.dst?svcClass=lhcbDst" se="RAL_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://door05.pic.es:1094/pnfs/pic.es/data/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000008_1.b2kmu.trigstrip.dst" se="PIC_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000008_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="D476427D-6E21-E611-AC2A-0090FAA575D0">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000018_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000018_1.b2kmu.trigstrip.dst" se="CNAF_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://door02.pic.es:1094/pnfs/pic.es/data/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000018_1.b2kmu.trigstrip.dst" se="PIC_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000018_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="563EF0AD-6E21-E611-9206-02163E0147BB">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000017_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://lhcb-sdpd1.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000017_1.b2kmu.trigstrip.dst" se="RRCKI_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://bohr3226.tier2.hep.manchester.ac.uk:1094//dpm/tier2.hep.manchester.ac.uk/home/lhcb/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000017_1.b2kmu.trigstrip.dst" se="Manchester_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000017_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="328DF6FE-EC1B-E611-BC88-003048C56E54">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://lhcb-sdpd1.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000010_1.b2kmu.trigstrip.dst" se="RRCKI_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000010_1.b2kmu.trigstrip.dst?svcClass=lhcbDst" se="RAL_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://by27-9.grid.sara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000010_1.b2kmu.trigstrip.dst" se="SARA_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000010_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="FE693281-AB1E-E611-966E-0025902CFFC4">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000016_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://lhcb-sdpd9.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000016_1.b2kmu.trigstrip.dst" se="RRCKI_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://se.cis.gov.pl:1094//dpm/cis.gov.pl/home/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000016_1.b2kmu.trigstrip.dst" se="NCBJ_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000016_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="2A730670-ED1B-E611-8BBE-E41D2D08DD20">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000009_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000009_1.b2kmu.trigstrip.dst" se="CNAF_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000009_1.b2kmu.trigstrip.dst?svcClass=lhcbDst" se="RAL_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000009_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="A23F261A-F31B-E611-B627-001CC4BF9C2E">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000006_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://lhcb-sdpd1.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000006_1.b2kmu.trigstrip.dst" se="RRCKI_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://ccdcacli067.in2p3.fr:1094/pnfs/in2p3.fr/data/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000006_1.b2kmu.trigstrip.dst" se="IN2P3_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000006_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="48F01112-551B-E611-B15C-0CC47A1E0472">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://lhcb-sdpd1.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000004_1.b2kmu.trigstrip.dst" se="RRCKI_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000004_1.b2kmu.trigstrip.dst" se="CNAF_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://ccdcacli067.in2p3.fr:1094/pnfs/in2p3.fr/data/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000004_1.b2kmu.trigstrip.dst" se="IN2P3_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000004_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="BCD76B53-7A18-E611-B4C0-02163E012A36">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000003_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000003_1.b2kmu.trigstrip.dst?svcClass=lhcbDst" se="RAL_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://tbit00.nipne.ro:1094//dpm/nipne.ro/home/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000003_1.b2kmu.trigstrip.dst" se="NIPNE-07-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000003_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="4469AF61-6F21-E611-A5D3-0025902D10E4">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://lhcb-sdpd9.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000022_1.b2kmu.trigstrip.dst" se="RRCKI_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000022_1.b2kmu.trigstrip.dst" se="CNAF_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000022_1.b2kmu.trigstrip.dst?svcClass=lhcbDst" se="RAL_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000022_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="4E52E5F1-7917-E611-83BB-0019BBEB54D0">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://f01-080-125-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000002_1.b2kmu.trigstrip.dst" se="GRIDKA_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://by32-2.grid.sara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000002_1.b2kmu.trigstrip.dst" se="SARA_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://grid05.lal.in2p3.fr:1094//dpm/lal.in2p3.fr/home/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000002_1.b2kmu.trigstrip.dst" se="LAL_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000002_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="A2E82677-6E21-E611-9994-3417EBE64519">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000020_1.b2kmu.trigstrip.dst" se="CNAF_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000020_1.b2kmu.trigstrip.dst?svcClass=lhcbDst" se="RAL_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://ccdcacli067.in2p3.fr:1094/pnfs/in2p3.fr/data/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000020_1.b2kmu.trigstrip.dst" se="IN2P3_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000020_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="766CCEE3-AA1E-E611-A778-00259059DA98">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000015_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://lhcb-sdpd1.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000015_1.b2kmu.trigstrip.dst" se="RRCKI_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://se.cis.gov.pl:1094//dpm/cis.gov.pl/home/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000015_1.b2kmu.trigstrip.dst" se="NCBJ_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000015_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="4AFAEE5E-EC1B-E611-B809-1803730B41A5">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000011_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://lhcb-sdpd9.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000011_1.b2kmu.trigstrip.dst" se="RRCKI_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://by27-8.grid.sara.nl:1094/pnfs/grid.sara.nl/data/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000011_1.b2kmu.trigstrip.dst" se="SARA_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000011_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="5A90223F-EC1B-E611-BABF-2C600C7BFB94">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000005_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://ccdcacli067.in2p3.fr:1094/pnfs/in2p3.fr/data/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000005_1.b2kmu.trigstrip.dst" se="IN2P3_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://f01-080-125-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000005_1.b2kmu.trigstrip.dst" se="GRIDKA_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000005_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="50729E4F-EC1B-E611-9411-008CFAF35A06">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://xrootd-lhcb.cr.cnaf.infn.it//storage/gpfs_lhcb/lhcb/disk/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000007_1.b2kmu.trigstrip.dst" se="CNAF_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://ccdcacli067.in2p3.fr:1094/pnfs/in2p3.fr/data/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000007_1.b2kmu.trigstrip.dst" se="IN2P3_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://storage01.lcg.cscs.ch:1094/pnfs/lcg.cscs.ch/lhcb/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000007_1.b2kmu.trigstrip.dst" se="CSCS_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000007_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="7653FDC1-AC1E-E611-9733-FA163EEFAB3E">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000013_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://lhcb-sdpd1.t1.grid.kiae.ru:1094/t1.grid.kiae.ru/data/lhcb/lhcbdisk/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000013_1.b2kmu.trigstrip.dst" se="RRCKI_MC-DST"/>
+      <pfn filetype="ROOT_All" name="root://f01-080-125-e.gridka.de:1094/pnfs/gridka.de/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000013_1.b2kmu.trigstrip.dst" se="GRIDKA_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000013_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+<File ID="1C1FDE82-6E21-E611-A5B9-E41D2D08DDD0">
+   <physical>
+      <pfn filetype="ROOT_All" name="root://eoslhcb.cern.ch//eos/lhcb/grid/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000021_1.b2kmu.trigstrip.dst" se="CERN_MC-DST-EOS"/>
+      <pfn filetype="ROOT_All" name="root://clhcbdlf.ads.rl.ac.uk//castor/ads.rl.ac.uk/prod/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000021_1.b2kmu.trigstrip.dst?svcClass=lhcbDst" se="RAL_MC-DST"/>
+   </physical>
+   <logical>
+      <lfn name="/lhcb/MC/2012/B2KMU.TRIGSTRIP.DST/00051296/0000/00051296_00000021_1.b2kmu.trigstrip.dst"/>
+   </logical>
+</File>
+
+</POOLFILECATALOG>
