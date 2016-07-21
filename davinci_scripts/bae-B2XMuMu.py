@@ -59,21 +59,22 @@ DefaultTrackingCuts().Cuts  = { "Chi2Cut" : [ 0, 4 ],
 
 
 from StrippingArchive.Stripping21.StrippingB2XMuMuInclusive import B2XMuMuInclusiveConf as builder
-from StrippingArchive.Stripping21.StrippingB2XMuMuInclusive import defaultConfig as config
+from StrippingSettings.Stripping21.LineConfigDictionaries_RD import B2XMuMuIncl as config
 
 
+print config
 #from StrippingSettings.Utils import strippingConfiguration
 #from StrippingArchive.Utils import buildStreams, cloneLinesFromStream
 #from StrippingArchive import strippingArchive
-config['MuonPID'] = -999999
-
+#config['MuonPID'] = -999999
+config['CONFIG']['HLT_FILTER']=""
 #stripping='stripping20'
 stripping = 'stripping21' 
 
 #get the configuration dictionary from the database
 #config  = strippingConfiguration(stripping)
 #config['HLT_FILTER_HMuNu']=""
-lb = builder('B2XMuMuInclusive',config)
+lb = builder('B2XMuMuInclusive',config['CONFIG'])
 print config
 #get the line builders from the archive#
 # Merge into one stream and run in flag mode
@@ -82,10 +83,10 @@ AllStreams = StrippingStream("Dimuon")
 
 for line in lb.lines():
     print line.name()
-    if line.name() == 'StrippingB2XMuMu_InclDiMuHighQ2Line':
+    if line.name() == 'StrippingB2XMuMuInclusive_InclDiMuHighQ2Line':
         AllStreams.appendLines([line])
        
-    if line.name() == 'StrippingB2XMuMu_InclDiMuLowQ2Line':
+    if line.name() == 'StrippingB2XMuMuInclusive_InclDiMuLowQ2Line':
         AllStreams.appendLines([line])    
 
 sc = StrippingConf( Streams = [ AllStreams ],
@@ -136,14 +137,14 @@ strippingSels = [DataOnDemand(Location=tesLoc)]
 # Here we just put the output candidates in an Tuple
 tuple = DecayTreeTuple("Jpsi_Tuple")
 tuple.Decay = "[B0 -> ^mu+ ^mu-]CC"
-tuple.Inputs = ["Phys/B2XMuMu_InclDiMuHighQ2Line/Particles"]
+tuple.Inputs = ["Phys/B2XMuMuInclusive_InclDiMuHighQ2Line/Particles"]
 
 
 # But what we really want is to make a dimuon and a Kaon  
 from StandardParticles import StdLooseKaons as kaons
 
-LowQ2MuonsOnDemand = DataOnDemand(Location = "Phys/B2XMuMu_InclDiMuLowQ2Line/Particles")
-HighQ2MuonsOnDemand = DataOnDemand(Location = "Phys/B2XMuMu_InclDiMuLowHighQ2Line/Particles")
+LowQ2MuonsOnDemand = DataOnDemand(Location = "Phys/B2XMuMuInclusive_InclDiMuLowQ2Line/Particles")
+HighQ2MuonsOnDemand = DataOnDemand(Location = "Phys/B2XMuMuInclusive_InclDiMuHighQ2Line/Particles")
 
 
 bothstripping = MergedSelection("Selection_mergeddaughters",
@@ -156,7 +157,7 @@ _selDimuons= Selection( "_selDimuons", Algorithm = _filterDimuons, RequiredSelec
 _B = CombineParticles()
 _B.DaughtersCuts = { "K+" : "PT>500*MeV" }
 _B.MotherCut = "(DMASS('B+')<5000*MeV) & (VFASPF(VCHI2)<25.0)" #need to check these cuts
-_B.DecayDescriptors = [ "[B+ -> J/psi(1S) K+]cc" ] 
+_B.DecayDescriptors = [ "[B+ -> B0 K+]cc" ] 
 
 
 _BdecaySelection = Selection( "TurboB", Algorithm = _B, RequiredSelections = [_selDimuons,kaons] )
@@ -164,7 +165,7 @@ SeqB = SelectionSequence('SeqB', TopSelection = _BdecaySelection)
 
 tupleB = tuple.clone("bae-muon-tuple")
 tupleB.Inputs = [SeqB.outputLocation()]
-tupleB.Decay = "[B+ -> J/psi(1S) K+]CC"
+tupleB.Decay = "[B+ -> B0 K+]CC"
 
 
 tuple.ToolList =  [
@@ -269,7 +270,8 @@ DaVinci().Lumi = not DaVinci().Simulation
 _myseq = GaudiSequencer("myseq")
 _myseq.Members += [ eventNodeKiller, sc.sequence()] #redo the stripping
 _myseq.Members += [SeqB.sequence() ] # make B candidates (muon channel)
-_myseq.Members += [tuple, tupleB] # put stuff in a Tuple
+_myseq.Members += [tuple]
+_myseq.Members +=[ tupleB] # put stuff in a Tuple
 DaVinci().UserAlgorithms = [_myseq] # run the whole thing
 DaVinci().MainOptions  = ""
 
