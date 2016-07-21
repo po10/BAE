@@ -16,7 +16,7 @@ from GaudiConfUtils.ConfigurableGenerators import FilterDesktop, CombineParticle
 
 from Configurables import DecayTreeTuple, FitDecayTrees, TupleToolRecoStats, TupleToolTrigger, TupleToolTISTOS, CondDB, SelDSTWriter
 from DecayTreeTuple.Configuration import *
-
+from PhysSelPython.Wrappers import MergedSelection
 
 # 
 name = 'bukmumu'
@@ -90,8 +90,12 @@ from StandardParticles import StdLooseKaons as kaons
 LowQ2MuonsOnDemand = DataOnDemand(Location = "Phys/B2XMuMu_InclDiMuLowQ2Line/Particles")
 HighQ2MuonsOnDemand = DataOnDemand(Location = "Phys/B2XMuMu_InclDiMuLowHighQ2Line/Particles")
 
+
+bothstripping = MergedSelection("Selection_mergeddaughters",
+       RequiredSelections = [LowQ2MuonsOnDemand,HighQ2MuonsOnDemand])
+
 _filterDimuons = FilterDesktop(Code="ABSID==511") # Dimuons from B0--> mu mu stripping selection
-_selDimuons= Selection( "_selDimuons", Algorithm = _filterDimuons, RequiredSelections = [LowQ2MuonsOnDemand, HighQ2MuonsOnDemand] )
+_selDimuons= Selection( "_selDimuons", Algorithm = _filterDimuons, RequiredSelections = [bothstripping] )
 
 # Try and make B->J/psi K
 _B = CombineParticles()
