@@ -6,6 +6,7 @@ What : Option file to make MC tuples.
 First re-run the stripping, add and add a kaon. Easy enough 
 
 
+
 """
 
 from Gaudi.Configuration import *
@@ -95,45 +96,6 @@ sc = StrippingConf( Streams = [ AllStreams ],
 
 
 
-#try to do it like in the starterkit 
-
-"""
-
-
-# Build a new stream called 'CustomStream' that only
-# contains the desired line
-strip = 'stripping21'
-streams = buildStreams(stripping=strippingConfiguration(strip),
-                       archive=strippingArchive(strip))
-
-custom_stream = StrippingStream('CustomStream')
-custom_line = 'B2XMuMu_InclDiMuHighQ2Line'
-
-for stream in streams:
-    for line in stream.lines:
-        if line.name() == custom_line:
-            custom_stream.appendLines([line])
-
-line = 'B2XGamma2pi_wCNV_Line'
-# Create the actual Stripping configurable
-filterBadEvents = ProcStatusCheck()
-sc = StrippingConf(Streams=[custom_stream],
-                   MaxCandidates=2000,
-                   AcceptBadEvents=False,
-                   BadEventSelection=filterBadEvents)
-# The output is placed directly into Phys, so we only need to
-# define the stripping line here
-line =  'B2XGamma2pi_wCNV_Line'
-# Stream and stripping line we want to use
-tesLoc = '/Event/Phys/{0}/Particles'.format(line)
-# get the selection(s) created by the stripping
-strippingSels = [DataOnDemand(Location=tesLoc)]
-
-
-"""
-
-
-
 # Here we just put the output candidates in an Tuple
 tuple = DecayTreeTuple("Jpsi_Tuple")
 tuple.Decay = "[B0 -> ^mu+ ^mu-]CC"
@@ -153,19 +115,24 @@ bothstripping = MergedSelection("Selection_mergeddaughters",
 _filterDimuons = FilterDesktop(Code="ABSID==511") # Dimuons from B0--> mu mu stripping selection
 _selDimuons= Selection( "_selDimuons", Algorithm = _filterDimuons, RequiredSelections = [bothstripping] )
 
+from Configurables import SubstitutePID
+subalg = SubstitutePID("_B2Jpsi_SubPID", Code="(DECTREE('B0 -> mu+ mu-'))",
+                       Substitutions={'B0 -> mu+ mu-' : 'J/psi(1S)'}, MaxChi2PerDoF=-666)
+subsel = Selection("subsel",Algorithm = subalg, RequiredSelections = [_selDimuons])
+
 # Try and make B->J/psi K
 _B = CombineParticles()
 _B.DaughtersCuts = { "K+" : "PT>500*MeV" }
 _B.MotherCut = "(DMASS('B+')<5000*MeV) & (VFASPF(VCHI2)<25.0)" #need to check these cuts
-_B.DecayDescriptors = [ "[B+ -> B0 K+]cc" ] 
+_B.DecayDescriptors = [ "[B+ -> J/psi(1S) K+]cc" ] 
 
 
-_BdecaySelection = Selection( "TurboB", Algorithm = _B, RequiredSelections = [_selDimuons,kaons] )
+_BdecaySelection = Selection( "TurboB", Algorithm = _B, RequiredSelections = [subsel,kaons] )
 SeqB = SelectionSequence('SeqB', TopSelection = _BdecaySelection)
 
 tupleB = tuple.clone("bae-muon-tuple")
 tupleB.Inputs = [SeqB.outputLocation()]
-tupleB.Decay = "[B+ -> B0 K+]CC"
+tupleB.Decay = "[B+ -> J/psi(1S) K+]CC"
 
 
 tuple.ToolList =  [
@@ -262,7 +229,7 @@ dstWriter = SelDSTWriter('BuKmumuDSTWriter',
 
 from Configurables import DaVinci
 DaVinci().TupleFile = "BuKMuMu.root"
-DaVinci().EvtMax = 5000
+DaVinci().EvtMax = 1000
 DaVinci().DataType = '2012'
 DaVinci().Simulation   = True
 DaVinci().Lumi = not DaVinci().Simulation
@@ -284,4 +251,40 @@ TrackSmeared("TrackSmearing").smearBest = True
 TrackSmeared("TrackSmearing").Scale = 0.5
 TrackSmearingSeq = GaudiSequencer("TrackSmearingSeq")
 TrackSmearingSeq.Members = [ TrackSmeared("TrackSmearing") ]
+"""
+#try to do it like in the starterkit 
+
+"""
+
+
+# Build a new stream called 'CustomStream' that only
+# contains the desired line
+strip = 'stripping21'
+streams = buildStreams(stripping=strippingConfiguration(strip),
+                       archive=strippingArchive(strip))
+
+custom_stream = StrippingStream('CustomStream')
+custom_line = 'B2XMuMu_InclDiMuHighQ2Line'
+
+for stream in streams:
+    for line in stream.lines:
+        if line.name() == custom_line:
+            custom_stream.appendLines([line])
+
+line = 'B2XGamma2pi_wCNV_Line'
+# Create the actual Stripping configurable
+filterBadEvents = ProcStatusCheck()
+sc = StrippingConf(Streams=[custom_stream],
+                   MaxCandidates=2000,
+                   AcceptBadEvents=False,
+                   BadEventSelection=filterBadEvents)
+# The output is placed directly into Phys, so we only need to
+# define the stripping line here
+line =  'B2XGamma2pi_wCNV_Line'
+# Stream and stripping line we want to use
+tesLoc = '/Event/Phys/{0}/Particles'.format(line)
+# get the selection(s) created by the stripping
+strippingSels = [DataOnDemand(Location=tesLoc)]
+
+
 """
