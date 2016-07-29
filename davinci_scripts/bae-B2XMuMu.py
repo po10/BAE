@@ -25,7 +25,10 @@ from StrippingArchive import strippingArchive
 
 
 
-from Configurables import DecayTreeTuple, FitDecayTrees, TupleToolRecoStats, TupleToolTrigger, TupleToolTISTOS, CondDB, SelDSTWriter
+from Configurables import DecayTreeTuple, FitDecayTrees, TupleToolRecoStats, TupleToolTrigger
+from Configurables import TupleToolTISTOS, CondDB, SelDSTWriter
+from Configurables import TupleToolTrackInfo, TupleToolRICHPid, TupleToolGeometry, TupleToolPid
+from Configurables import TupleToolANNPID
 from DecayTreeTuple.Configuration import *
 from PhysSelPython.Wrappers import MergedSelection
 
@@ -96,10 +99,6 @@ sc = StrippingConf( Streams = [ AllStreams ],
 
 
 
-# Here we just put the output candidates in an Tuple
-tuple = DecayTreeTuple("Jpsi_Tuple")
-tuple.Decay = "[B0 -> ^mu+ ^mu-]CC"
-tuple.Inputs = ["Phys/B2XMuMuInclusive_InclDiMuHighQ2Line/Particles"]
 
 
 # But what we really want is to make a dimuon and a Kaon  
@@ -130,30 +129,55 @@ _B.DecayDescriptors = [ "[B+ -> J/psi(1S) K+]cc" ]
 _BdecaySelection = Selection( "TurboB", Algorithm = _B, RequiredSelections = [subsel,kaons] )
 SeqB = SelectionSequence('SeqB', TopSelection = _BdecaySelection)
 
-tupleB = tuple.clone("bae-muon-tuple")
+
+tupleB = DecayTreeTuple("bar-muon-tuple")
+
 tupleB.Inputs = [SeqB.outputLocation()]
-tupleB.Decay = "[B+ -> J/psi(1S) K+]CC"
+tupleB.Decay = "[B+ -> ^(J/psi(1S) -> ^mu+ ^mu-) ^K+]CC"
 
 
-tuple.ToolList =  [
+
+
+tupleB.ToolList =  [
       "TupleToolKinematic"
     , "TupleToolEventInfo"
     , "TupleToolRecoStats"
-    , "TupleToolMCTruth"
     , "TupleToolMCBackgroundInfo"
-   # , "TupleBuKmmFit"
+    ,"TupleToolMCBackgroundInfo",#comment out for data
+    "TupleToolMCTruth", #comment out for data
+    "TupleToolTrigger",
+    "TupleToolPid",
+    "TupleToolPrimaries",
+    "TupleToolAngles",
+    "TupleToolEventInfo",
+    "TupleToolGeometry",
+    "TupleToolKinematic",
+    "TupleToolPropertime",
+    "TupleToolRecoStats",
+    "TupleToolTrackInfo",
+    "TupleToolTISTOS", 
+    "TupleToolBremInfo",
+    "TupleToolPhotonInfo"#, 
+   ,"TupleToolTrackIsolation"
+    , "TupleToolANNPID"
+
 ] # Probably need to add many more Tools. 
 
 
-tuple.addBranches ({         
-      "muplus" :  "[B0 -> ^mu+ mu-]CC",
-      "muminus" :  "[B0 -> mu+ ^mu-]CC",
-      "B" : "[B0 -> mu+ mu-]CC",
+
+
+
+tupleB.addBranches ({         
+      "Kplus" :  "[B+ -> ^K+ (J/psi(1S) -> mu+ mu-)]CC",
+      "Jpsi" :  "[B+ -> K+ ^(J/psi(1S) -> mu+ mu-)]CC",
+      "muplus" :  "[B+ -> K+ (J/psi(1S) -> ^mu+ mu-)]CC",
+      "muminus" :  "[B+ -> K+ (J/psi(1S) -> mu+ ^mu-)]CC",
+      "Bplus" : "[B+ -> K+ J/psi(1S)]CC",
 })
 
 
 
-LoKi_All=tuple.addTupleTool("LoKi::Hybrid::TupleTool/LoKi_All")
+LoKi_All=tupleB.addTupleTool("LoKi::Hybrid::TupleTool/LoKi_All")
 LoKi_All.Variables = {
         'MINIPCHI2' : "MIPCHI2DV(PRIMARY)", 
         'MINIP' : "MIPDV(PRIMARY)",
@@ -164,7 +188,7 @@ LoKi_All.Variables = {
 
 
 
-LoKi_muplus=tuple.muplus.addTupleTool("LoKi::Hybrid::TupleTool/LoKi_muplus")
+LoKi_muplus=tupleB.muplus.addTupleTool("LoKi::Hybrid::TupleTool/LoKi_muplus")
 LoKi_muplus.Variables = {
        'PIDmu' : "PIDmu",
        'ghost' : "TRGHP",
@@ -174,7 +198,17 @@ LoKi_muplus.Variables = {
        'NNmu' : "PPINFO(PROBNNmu)"
 }
 
-LoKi_muminus=tuple.muminus.addTupleTool("LoKi::Hybrid::TupleTool/LoKi_muminus")
+LoKi_Kplus=tupleB.Kplus.addTupleTool("LoKi::Hybrid::TupleTool/LoKi_Kplus")
+LoKi_Kplus.Variables = {
+       'PIDmu' : "PIDmu",
+       'PIDK' : "PIDK",
+       'ghost' : "TRGHP",
+       'TRACK_CHI2' : "TRCHI2DOF",
+       'NNK' : "PPINFO(PROBNNK)",
+       'NNpi' : "PPINFO(PROBNNpi)",
+       'NNmu' : "PPINFO(PROBNNmu)"
+}
+LoKi_muminus=tupleB.muminus.addTupleTool("LoKi::Hybrid::TupleTool/LoKi_muminus")
 LoKi_muminus.Variables = {
        'PIDmu' : "PIDmu",
        'ghost' : "TRGHP",
@@ -185,14 +219,27 @@ LoKi_muminus.Variables = {
 }
 
 
-LoKi_B=tuple.B.addTupleTool("LoKi::Hybrid::TupleTool/LoKi_B")
+LoKi_B=tupleB.Bplus.addTupleTool("LoKi::Hybrid::TupleTool/LoKi_B")
 LoKi_B.Variables = {
        'DTF_CHI2' : "DTF_CHI2NDOF(True)",
        'TAU' : "BPVLTIME()",
        'DIRA_OWNPV' : "BPVDIRA",
        'FD_CHI2' : "BPVVDCHI2",
        'ENDVERTEX_CHI2' : "VFASPF(VCHI2/VDOF)",
+       'PVX' : "BPV(VX)",
+       'PVY' : "BPV(VY)",
+       'PVZ' : "BPV(VZ)",
+       'VX' : "VFASPF(VX)",
+       'VY' : "VFASPF(VY)",
+       'VZ' : "VFASPF(VZ)",
+       'X_travelled' : "VFASPF(VX)-BPV(VX)",
+       'Y_travelled' : "VFASPF(VY)-BPV(VY)",
+       'Z_travelled' : "VFASPF(VZ)-BPV(VZ)",
+       'P_Parallel' : "BPVDIRA*P",
+       'P_Perp' : "sin(acos(BPVDIRA))*P",
+       'Corrected_Mass' : "BPVCORRM"
 }
+
 
 
 list = [
@@ -213,11 +260,46 @@ list = [
 ] #Is the trigger list uptodate? 
 
 
-tuple.B.ToolList += [ "TupleToolTISTOS" ]
-tuple.B.addTool( TupleToolTISTOS, name = "TupleToolTISTOS" )
-tuple.B.TupleToolTISTOS.Verbose = True
-tuple.B.TupleToolTISTOS.TriggerList = list
 
+
+
+tupleB.Bplus.ToolList += [ "TupleToolTISTOS" ]
+tupleB.Bplus.addTool( TupleToolTISTOS, name = "TupleToolTISTOS" )
+tupleB.Bplus.TupleToolTISTOS.Verbose = True
+tupleB.Bplus.TupleToolTISTOS.TriggerList = list
+tupleB.Bplus.TupleToolTISTOS.Verbose = True 
+tupleB.Bplus.TupleToolTISTOS.VerboseL0= True 
+tupleB.Bplus.TupleToolTISTOS.VerboseHlt1= True 
+tupleB.Bplus.TupleToolTISTOS.VerboseHlt2= True 
+
+
+
+
+tupleB.Jpsi.ToolList += [ "TupleToolTISTOS" ]
+tupleB.Jpsi.addTool( TupleToolTISTOS, name = "TupleToolTISTOS" )
+tupleB.Jpsi.TupleToolTISTOS.Verbose = True
+tupleB.Jpsi.TupleToolTISTOS.TriggerList = list
+
+
+
+tupleB.Jpsi.TupleToolTISTOS.Verbose = True 
+tupleB.Jpsi.TupleToolTISTOS.VerboseL0= True 
+tupleB.Jpsi.TupleToolTISTOS.VerboseHlt1= True 
+tupleB.Jpsi.TupleToolTISTOS.VerboseHlt2= True 
+
+tupleB.addTool(TupleToolTrackInfo, name = "TupleToolTrackInfo")
+tupleB.TupleToolTrackInfo.Verbose=True
+tupleB.addTool(TupleToolRICHPid, name="TupleToolRICHPid")
+tupleB.TupleToolRICHPid.Verbose=True
+tupleB.addTool(TupleToolRecoStats, name="TupleToolRecoStats")
+tupleB.TupleToolRecoStats.Verbose=True
+tupleB.addTool(TupleToolGeometry, name="TupleToolGeometry")
+tupleB.TupleToolGeometry.Verbose=True
+tupleB.addTool(TupleToolPid, name="TupleToolPid")
+tupleB.TupleToolPid.Verbose=True
+
+tupleB.addTool(TupleToolANNPID, name = "TupleToolANNPID")
+tupleB.TupleToolANNPID.ANNPIDTunes = ['MC12TuneV2', 'MC12TuneV3']
 
 
 dstWriter = SelDSTWriter('BuKmumuDSTWriter',
@@ -229,7 +311,7 @@ dstWriter = SelDSTWriter('BuKmumuDSTWriter',
 
 from Configurables import DaVinci
 DaVinci().TupleFile = "BuKMuMu.root"
-DaVinci().EvtMax = 1000
+DaVinci().EvtMax = -1
 DaVinci().DataType = '2012'
 DaVinci().Simulation   = True
 DaVinci().Lumi = not DaVinci().Simulation
@@ -237,7 +319,7 @@ DaVinci().Lumi = not DaVinci().Simulation
 _myseq = GaudiSequencer("myseq")
 _myseq.Members += [ eventNodeKiller, sc.sequence()] #redo the stripping
 _myseq.Members += [SeqB.sequence() ] # make B candidates (muon channel)
-_myseq.Members += [tuple]
+#_myseq.Members += [tuple]
 _myseq.Members +=[ tupleB] # put stuff in a Tuple
 DaVinci().UserAlgorithms = [_myseq] # run the whole thing
 DaVinci().MainOptions  = ""
